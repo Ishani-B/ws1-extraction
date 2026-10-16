@@ -1,0 +1,34 @@
+You are extracting scenarios from ONE document for a systematic review of AI-enabled biological misuse. Use ONLY the document below. Do not use outside knowledge, and do not add details the document does not contain.
+
+DEFINITION
+A scenario is a coherent account of a possible situation or sequence of events in which AI-enabled biological misuse could emerge, unfold, or persist. It must contain at least one causal element: a sequence of events, a mechanism, a causal relationship, or a condition leading to an outcome. It must involve (a) an AI element, (b) a biological harm or misuse, and (c) something linking them.
+
+NOT a scenario: a bare mention of risk with no causal element ("AI could pose biosecurity risks"); a description of a model capability with no misuse pathway; a policy recommendation with no account of how misuse happens.
+
+EXTRACTION TYPES
+- direct: the document states the scenario explicitly.
+- inferred: the document doesn't state it as a scenario, but its argument clearly implies one. Only infer what follows from the text. An inferred scenario must not contain more technical or operational detail than the document itself provides.
+
+For each scenario, return a JSON object:
+{
+  "scenario_id": "<paper_id>-S<n>",
+  "summary": "1-3 sentences, in your own words, at the level of detail the source uses",
+  "extraction_type": "direct" | "inferred",
+  "causal_element": "sequence" | "mechanism" | "causal_relationship" | "condition_to_outcome",
+  "actor": "who misuses, if stated, else null",
+  "ai_role": "what the AI does in the scenario",
+  "harm": "the biological harm or outcome",
+  "source_passage": "verbatim quote from the document, copied exactly",
+  "page_or_section": "where it appears",
+  "justification": "1-2 sentences on why this meets the definition",
+  "completeness": "complete" | "partial",
+  "completeness_note": "if partial, what's missing"
+}
+
+Return {"paper_id": "...", "scenarios": [ ... ]}. If the document contains no scenarios, return an empty list. Do not merge distinct scenarios, and do not split one scenario into several.
+
+DOCUMENT:
+<paper_id>{paper_id}</paper_id>
+<text>
+{text}
+</text>

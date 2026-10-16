@@ -1,0 +1,29 @@
+# Pipeline settings. Every run copies this file into its log folder,
+# so the exact settings behind any output are always recorded.
+
+prompt_file: prompts/extract_v1.txt
+prompt_version: v1
+runs_per_paper: 3
+temperature: 0
+max_output_tokens: 16000
+request_timeout_s: 600
+
+# Any OpenAI-compatible endpoint works. OpenRouter is the default.
+# Put the key in an environment variable, never in this file.
+api_base: https://openrouter.ai/api/v1
+api_key_env: OPENROUTER_API_KEY
+
+# CHECK THESE IDS against the provider's model list before running.
+# "provider" pins which host serves the model so results don't silently
+# change with routing. allow_fallbacks: false makes the call fail instead
+# of quietly switching hosts. Fill in a host name from the model's page.
+models:
+  minimax-m3:
+    id: minimax/minimax-m3
+    provider: {order: [], allow_fallbacks: false}
+  nemotron-3-ultra:
+    id: nvidia/nemotron-3-ultra
+    provider: {order: [], allow_fallbacks: false}
+  kimi-k3:
+    id: moonshotai/kimi-k3
+    provider: {order: [], allow_fallbacks: false}

@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.env
+
+# pipeline output: runs/text holds full paper text, so keep it out of the repo
+runs*/
+samples_mock/
