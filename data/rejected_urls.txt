@@ -1,0 +1,7 @@
+R0093	wrong document (DeepMind AGI safety paper)	https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/evaluating-potential-cybersecurity-threats-of-advanced-ai/An_Approach_to_Technical_AGI_Safety_Apr_2025.pdf
+R0162	wrong document (NSABB 2023 report)	https://osp.od.nih.gov/wp-content/uploads/2023/03/NSABB-Final-Report-Proposed-Biosecurity-Oversight-Framework-for-the-Future-of-Science.pdf
+R0234	wrong document (WEF health council report)	http://www3.weforum.org/docs/WEF__Shaping_the_Future_of_Health_Council_Report.pdf
+R1566	wrong document (Data & Society red-teaming report)	https://datasociety.net/wp-content/uploads/2025/02/Red-Teaming-in_the_Public_Interest_FINAL1.pdf
+R1758	wrong document (fantasy proneness article)	https://scienceij.com/index.php/sij/article/download/221/190
+R2069	wrong document (1996 BWC background paper)	https://docs-library.unoda.org/Biological_Weapons_Convention_-_Fourth_Review_Conference_(1996)/BWC_CONF.IV_04.pdf
+R0234	wrong document (AAAS big data report)	https://www.aaas.org/sites/default/files/AAAS-FBI-UNICRI_Big_Data_Report_111014.pdf

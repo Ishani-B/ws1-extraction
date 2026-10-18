@@ -5,25 +5,26 @@ prompt_file: prompts/extract_v1.txt
 prompt_version: v1
 runs_per_paper: 3
 temperature: 0
-max_output_tokens: 16000
-request_timeout_s: 600
+# These are reasoning models; the limit covers reasoning + answer.
+# 32768 is the most Venice (Nemotron's host) allows.
+max_output_tokens: 32768
+request_timeout_s: 900
 
 # Any OpenAI-compatible endpoint works. OpenRouter is the default.
-# Put the key in an environment variable, never in this file.
+# The key goes in .env (OPENROUTER_API_KEY=...), never in this file.
 api_base: https://openrouter.ai/api/v1
 api_key_env: OPENROUTER_API_KEY
 
-# CHECK THESE IDS against the provider's model list before running.
-# "provider" pins which host serves the model so results don't silently
-# change with routing. allow_fallbacks: false makes the call fail instead
-# of quietly switching hosts. Fill in a host name from the model's page.
+# IDs and hosts checked on OpenRouter, 16 Oct 2026.
+# "provider" pins the host so results don't change with OpenRouter's routing;
+# allow_fallbacks: false makes a call fail rather than quietly switch hosts.
 models:
   minimax-m3:
     id: minimax/minimax-m3
-    provider: {order: [], allow_fallbacks: false}
+    provider: {order: [Minimax], allow_fallbacks: false}      # first-party, fp8, 524k context
   nemotron-3-ultra:
-    id: nvidia/nemotron-3-ultra
-    provider: {order: [], allow_fallbacks: false}
+    id: nvidia/nemotron-3-ultra-550b-a55b
+    provider: {order: [Venice], allow_fallbacks: false}       # fp8 (others are fp4), 256k context
   kimi-k3:
     id: moonshotai/kimi-k3
-    provider: {order: [], allow_fallbacks: false}
+    provider: {order: [BaseTen], allow_fallbacks: false}      # fp8; Moonshot's own host doesn't allow temperature 0

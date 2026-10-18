@@ -75,6 +75,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--runs", default="runs")
     ap.add_argument("--seed", type=int, default=20261015, help="seed for blinding codes")
+    ap.add_argument("--reviewers", default="reviewer1,reviewer2",
+                    help="comma-separated names; one independent sheet each")
     args = ap.parse_args()
     runs = Path(args.runs)
 
@@ -82,10 +84,19 @@ def main():
     if not records:
         raise SystemExit("no runs found")
 
-    models = sorted({r["model_key"] for r in records})
-    codes = [chr(65 + i) for i in range(len(models))]
+    # codes are assigned over every model in the run's config, so they stay the same
+    # while some models are still running
+    import yaml
+    cfg_used = yaml.safe_load((runs / "config_used.yaml").read_text())
+    all_models = sorted(cfg_used["models"])
+    runs_per = cfg_used["runs_per_paper"]
+    models = all_models
+    codes = [chr(65 + i) for i in range(len(all_models))]
     random.Random(args.seed).shuffle(codes)
-    blind = dict(zip(models, codes))
+    blind = dict(zip(all_models, codes))
+    key_file = runs / "blinding_key.json"
+    if key_file.exists():  # never reshuffle once reviewers have seen codes
+        blind = json.loads(key_file.read_text())
 
     texts = {}
     call_rows, scen_rows = [], []
@@ -100,7 +111,12 @@ def main():
         call_rows.append({"model": mkey, "paper_id": pid, "run": r["run"], "status": r["status"],
                           "n_scenarios": len(scens), "errors": "; ".join(r.get("errors") or []),
                           "seconds": r.get("seconds"), "served_model": r.get("served_model"),
-                          "served_provider": r.get("served_provider")})
+                          "served_provider": r.get("served_provider"),
+                          "pinned_provider": ",".join((r.get("provider_pin") or {}).get("order") or []),
+                          "prompt_tokens": (r.get("usage") or {}).get("prompt_tokens"),
+                          "completion_tokens": (r.get("usage") or {}).get("completion_tokens"),
+                          "cost_usd": (r.get("usage") or {}).get("cost"),
+                          "retries": max(0, len(r.get("attempts") or []) - 1)})
         for s in scens:
             if isinstance(s, dict):
                 by_model_paper[(mkey, pid)].append({"run": r["run"], "s": s})
@@ -146,33 +162,114 @@ def main():
             "quote_near_pct": round(100 * (s.quote_check == "near").mean(), 1) if n else None,
             "quote_not_found_pct": round(100 * (s.quote_check == "not_found").mean(), 1) if n else None,
             "stable_pct": round(100 * s.stable.mean(), 1) if n else None,
+            "wrong_host_calls": int(((c.served_provider.fillna("") != c.pinned_provider) & (c.status == "ok")
+                                     & (c.pinned_provider != "")).sum()),
+            "median_seconds": c.seconds.median(),
+            "output_tokens_total": int(c.completion_tokens.fillna(0).sum()),
+            "cost_usd_total": round(float(pd.to_numeric(c.cost_usd, errors="coerce").fillna(0).sum()), 3),
         })
     auto = pd.DataFrame(auto).sort_values("model_code")
 
-    missed = pd.DataFrame(columns=["paper_id", "reviewer", "page_or_section", "summary", "why_it_qualifies",
-                                   "missed_by_models (codes)"])
+    # ---- which (model, paper) pairs are finished ----
+    papers = sorted({r["paper_id"] for r in records})
+    status_rows = []
+    for mkey in all_models:
+        for pid in papers:
+            c = calls[(calls.model == mkey) & (calls.paper_id == pid)] if len(calls) else calls
+            done = len(c) >= runs_per and not (c.status == "api_error").any()
+            status_rows.append({"model_code": blind[mkey], "paper_id": pid, "runs_done": len(c),
+                                "ready_to_review": "yes" if done else "not yet"})
+            if not done and len(scen):
+                scen = scen[~((scen.model_code == blind[mkey]) & (scen.paper_id == pid))]
+    status = pd.DataFrame(status_rows).sort_values(["paper_id", "model_code"])
 
-    out = runs / "review_sheet.xlsx"
-    with pd.ExcelWriter(out, engine="openpyxl") as xw:
-        scen.drop(columns=[]).to_excel(xw, sheet_name="scenarios", index=False)
-        missed.to_excel(xw, sheet_name="missed", index=False)
+    # ---- reviewer sheets: scenarios + ratings only, nothing that identifies a model ----
+    show = ["row_id", "paper_id", "model_code", "quote_check", "summary", "source_passage", "page_or_section",
+            "extraction_type", "completeness", "completeness_note", "actor", "ai_role", "harm", "causal_element",
+            "justification", "found_in_runs"]
+    rate = ["support_rating", "elements_wrong", "duplicate_of", "notes"]
+    sheet = scen[show].copy() if len(scen) else pd.DataFrame(columns=show)
+    for c in rate:
+        sheet[c] = ""
+    sheet = sheet.sort_values(["paper_id", "model_code", "row_id"])
+    missed_cols = ["paper_id", "page_or_section", "summary", "why_it_qualifies", "missed_by (model codes)"]
+    key_rows = pd.DataFrame({
+        "column": ["support_rating", "", "", "", "elements_wrong", "duplicate_of", "quote_check", "", "",
+                   "found_in_runs", "missed tab"],
+        "meaning": ["supported: everything in the summary is in the paper",
+                    "partially supported: core is there, one element added or overstated (say which in elements_wrong)",
+                    "unsupported: quote is real but the paper doesn't say or argue this scenario",
+                    "not a scenario: fails the definition (no causal link, no AI, or no bio harm)",
+                    "actor / AI role / harm / causal link / extraction type / completeness",
+                    "row_id of the row this repeats",
+                    "exact: quote found in the paper; near: almost (usually PDF hyphenation), check it;",
+                    "not_found: quote isn't in the paper. It only shows the quote exists, not that it supports the scenario",
+                    "",
+                    "which of the 3 runs found it; 1 run only = less stable",
+                    "after rating a paper, log scenarios no model found, one per row"]})
+
+    def write_sheet(path):
+        old_rate, old_missed = {}, None
+        if path.exists():  # keep ratings already entered
+            prev = pd.read_excel(path, sheet_name=None, dtype=str)
+            if "scenarios" in prev:
+                for _, r in prev["scenarios"].fillna("").iterrows():
+                    old_rate[r["row_id"]] = {c: r.get(c, "") for c in rate}
+            old_missed = prev.get("missed")
+        s = sheet.copy()
+        for i, r in s.iterrows():
+            for c, v in old_rate.get(r["row_id"], {}).items():
+                s.at[i, c] = v
+        missed = old_missed if old_missed is not None else pd.DataFrame(columns=missed_cols)
+        with pd.ExcelWriter(path, engine="openpyxl") as xw:
+            s.to_excel(xw, sheet_name="scenarios", index=False)
+            missed.to_excel(xw, sheet_name="missed", index=False)
+            status.to_excel(xw, sheet_name="progress", index=False)
+            key_rows.to_excel(xw, sheet_name="how_to_rate", index=False)
+            from openpyxl.worksheet.datavalidation import DataValidation
+            from openpyxl.styles import Alignment, Font, PatternFill
+            ws = xw.sheets["scenarios"]
+            col = s.columns.get_loc("support_rating") + 1
+            letter = ws.cell(row=1, column=col).column_letter
+            dv = DataValidation(type="list", formula1='"supported,partially supported,unsupported,not a scenario"',
+                                allow_blank=True)
+            ws.add_data_validation(dv)
+            dv.add(f"{letter}2:{letter}{max(2, len(s) + 1)}")
+            widths = {"row_id": 14, "paper_id": 8, "model_code": 7, "quote_check": 10, "summary": 50,
+                      "source_passage": 60, "page_or_section": 12, "justification": 40, "notes": 30}
+            for j, name in enumerate(s.columns, start=1):
+                L = ws.cell(row=1, column=j).column_letter
+                ws.column_dimensions[L].width = widths.get(name, 14)
+                ws.cell(row=1, column=j).font = Font(bold=True)
+                if name in rate:
+                    ws.cell(row=1, column=j).fill = PatternFill("solid", fgColor="FFFF00")
+                for i in range(2, len(s) + 2):
+                    ws.cell(row=i, column=j).alignment = Alignment(wrap_text=name in ("summary", "source_passage",
+                                                                                       "justification", "notes"),
+                                                                    vertical="top")
+            ws.freeze_panes = "D2"
+            for name, w in (("missed", [8, 14, 60, 40, 18]), ("how_to_rate", [16, 100]), ("progress", [10, 8, 10, 14])):
+                for j, width in enumerate(w, start=1):
+                    xw.sheets[name].column_dimensions[xw.sheets[name].cell(row=1, column=j).column_letter].width = width
+        return sum(1 for r in old_rate.values() if r.get("support_rating"))
+
+    written = []
+    for name in args.reviewers.split(","):
+        p = runs / f"review_{name.strip()}.xlsx"
+        kept = write_sheet(p)
+        written.append(f"{p.name} ({kept} existing ratings kept)")
+
+    # ---- analyst-only file: numbers per model (still coded) + full call log ----
+    with pd.ExcelWriter(runs / "pilot_metrics.xlsx", engine="openpyxl") as xw:
         auto.to_excel(xw, sheet_name="auto_metrics", index=False)
-        pd.DataFrame({"support_rating options": ["supported", "partially supported", "unsupported", "not a scenario"]}
-                     ).to_excel(xw, sheet_name="rating_key", index=False)
-        ws = xw.sheets["scenarios"]
-        from openpyxl.worksheet.datavalidation import DataValidation
-        col = scen.columns.get_loc("support_rating") + 1
-        letter = ws.cell(row=1, column=col).column_letter
-        dv = DataValidation(type="list", formula1='"supported,partially supported,unsupported,not a scenario"',
-                            allow_blank=True)
-        ws.add_data_validation(dv)
-        dv.add(f"{letter}2:{letter}{len(scen) + 1}")
-        ws.freeze_panes = "B2"
-
+        calls.drop(columns=["model"]).assign(model_code=calls.model.map(blind)).to_excel(xw, sheet_name="call_log", index=False)
+        status.to_excel(xw, sheet_name="progress", index=False)
     (runs / "blinding_key.json").write_text(json.dumps(blind, indent=2))
     calls.to_csv(runs / "call_log.csv", index=False)
     print(auto.to_string(index=False))
-    print(f"\nreview sheet: {out}\nblinding key (don't share with reviewers): {runs / 'blinding_key.json'}")
+    print(f"\nreviewer sheets: {', '.join(written)}")
+    print(f"rows ready to review: {len(sheet)}; pending model/paper pairs: {int((status.ready_to_review != 'yes').sum())}")
+    print(f"analyst file: {runs / 'pilot_metrics.xlsx'}   blinding key (don't share): {runs / 'blinding_key.json'}")
 
 
 if __name__ == "__main__":

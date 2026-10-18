@@ -1,0 +1,131 @@
+paper_id,pages,approx_tokens,source_type
+R0028,14,20143,(conflict)
+R0062,21,18389,(conflict)
+R0063,10,16542,peer-reviewed
+R0069,19,12335,(conflict)
+R0070,12,13619,peer-reviewed
+R0093,5,7440,peer-reviewed
+R0098,18,25830,(conflict)
+R0118,13,19260,(conflict)
+R0136,6,7281,peer-reviewed
+R0141,32,32238,(conflict)
+R0143,6,9581,peer-reviewed
+R0159,14,23516,(conflict)
+R0162,8,9463,peer-reviewed
+R0163,13,14699,(conflict)
+R0171,36,22673,peer-reviewed
+R0172,27,11433,(conflict)
+R0174,6,7709,(conflict)
+R0178,16,14968,(conflict)
+R0187,6,8757,peer-reviewed
+R0197,18,35802,peer-reviewed
+R0222,8,11846,peer-reviewed
+R0224,24,39418,peer-reviewed
+R0234,9,11780,peer-reviewed
+R0249,11,15291,peer-reviewed
+R0250,9,12942,(conflict)
+R0278,22,31503,peer-reviewed
+R0286,15,14296,peer-reviewed
+R0311,6,7366,peer-reviewed
+R0314,6,8512,peer-reviewed
+R0332,8,13170,peer-reviewed
+R0339,55,27348,institutional report
+R0343,9,13230,peer-reviewed
+R0346,7,7907,peer-reviewed
+R0347,9,12463,peer-reviewed
+R0358,12,12607,peer-reviewed
+R0362,23,39372,peer-reviewed
+R0366,6,8284,peer-reviewed
+R0373,10,16310,peer-reviewed
+R0375,4,6039,peer-reviewed
+R0376,4,5951,peer-reviewed
+R0378,4,5045,peer-reviewed
+R0380,4,4366,peer-reviewed
+R0381,4,6080,peer-reviewed
+R0383,3,3602,peer-reviewed
+R0385,4,5409,peer-reviewed
+R0388,5,2969,peer-reviewed
+R0440,45,35997,institutional report
+R0461,211,166835,needs_check
+R0591,11,12207,peer-reviewed
+R0601,21,19648,peer-reviewed
+R0606,25,24192,peer-reviewed
+R0607,3,3685,peer-reviewed
+R0657,33,47092,peer-reviewed
+R0663,9,6436,needs_check
+R0673,12,9655,needs_check
+R0711,17,24568,peer-reviewed
+R0720,101,60467,peer-reviewed
+R0726,25,23120,peer-reviewed
+R0728,11,11761,peer-reviewed
+R0750,26,23450,peer-reviewed
+R0789,15,10924,peer-reviewed
+R0818,18,26782,peer-reviewed
+R0837,7,10278,peer-reviewed
+R0852,14,10884,needs_check
+R0885,21,13949,peer-reviewed
+R0886,5,8138,peer-reviewed
+R0929,15,6751,peer-reviewed
+R0954,11,8752,needs_check
+R0971,7,9953,peer-reviewed
+R1105,4,5911,peer-reviewed
+R1154,3,3617,peer-reviewed
+R1181,69,53855,government
+R1315,5,6685,peer-reviewed
+R1416,17,11934,government
+R1521,18,12558,preprint
+R1525,8,12044,peer-reviewed
+R1558,22,17720,preprint
+R1580,8,9958,peer-reviewed
+R1597,14,23261,peer-reviewed
+R1638,30,19921,preprint
+R1641,7,7015,peer-reviewed
+R1651,22,29993,preprint
+R1698,14,12487,preprint
+R1726,27,22695,preprint
+R1748,12,0,preprint
+R1754,17,12289,preprint
+R1757,9,7077,preprint
+R1760,8,6789,preprint
+R1789,40,33987,preprint
+R1792,6,6089,preprint
+R1799,33,16952,preprint
+R1804,20,16068,preprint
+R1841,18,15175,preprint
+R1846,14,13441,preprint
+R1855,11,13118,preprint
+R1887,8,4706,institutional report
+R1926,19,17238,preprint
+R1959,4,4301,preprint
+R1976,23,21908,preprint
+R1978,35,23396,needs_check
+R1989,374,208983,preprint
+R2007,8,6881,preprint
+R2027,4,4215,institutional report
+R2028,24,23772,red-team study
+R2032,51,30542,institutional report
+R2036,46,26491,institutional report
+R2038,63,41509,institutional report
+R2040,85,44791,institutional report
+R2041,79,57074,institutional report
+R2042,60,41543,institutional report
+R2046,24,23772,red-team study
+R2048,18,10183,institutional report
+R2051,205,153219,institutional report
+R2062,6,1325,needs_check
+R2086,35,20989,preprint
+R2113,14,8247,preprint
+R2218,13,9869,preprint
+R2222,79,53220,preprint
+R2228,15,7867,preprint
+R2324,15,10739,peer-reviewed
+R2331,34,21019,needs_check
+R2333,9,2988,institutional report
+R2338,328,163011,needs_check
+R2339,21,18890,peer-reviewed
+R2340,5,2826,peer-reviewed
+R2345,57,23409,(conflict)
+R2348,49,15705,needs_check
+R2349,10,8443,peer-reviewed
+R2354,10,9470,peer-reviewed
+R2357,11,8641,red-team study

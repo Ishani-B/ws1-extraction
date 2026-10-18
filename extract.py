@@ -120,13 +120,46 @@ def call_model(cfg, model_cfg, prompt):
         extra_body=extra or None,
     )
     choice = resp.choices[0]
+    extra_msg = getattr(choice.message, "model_extra", None) or {}
     return {
         "raw": choice.message.content or "",
+        "reasoning": extra_msg.get("reasoning") or extra_msg.get("reasoning_content"),
         "finish_reason": choice.finish_reason,
         "served_model": getattr(resp, "model", None),
         "served_provider": getattr(resp, "provider", None),
         "usage": resp.usage.model_dump() if resp.usage else None,
     }
+
+
+RETRY_WAITS = [30, 90, 180, 300]  # seconds; busy hosts (429) and server errors (5xx) only
+
+
+def call_with_retry(cfg, model_cfg, prompt, record):
+    """Retry rate limits, timeouts and server errors. Bad requests (4xx other
+    than 429) fail immediately, since retrying won't fix them."""
+    import openai
+    attempts = []
+    for i, wait in enumerate([0] + RETRY_WAITS):
+        if wait:
+            time.sleep(wait)
+        try:
+            res = call_model(cfg, model_cfg, prompt)
+            record["attempts"] = attempts + ["ok"]
+            return res
+        except (openai.RateLimitError, openai.APITimeoutError, openai.APIConnectionError,
+                openai.InternalServerError) as e:
+            attempts.append(f"{type(e).__name__}")
+            print(f"    {type(e).__name__}; retrying in {RETRY_WAITS[i] if i < len(RETRY_WAITS) else 0}s", flush=True)
+            last = e
+        except openai.APIStatusError as e:
+            if getattr(e, "status_code", 0) >= 500:
+                attempts.append(f"HTTP {e.status_code}")
+                last = e
+                continue
+            record["attempts"] = attempts + [f"HTTP {getattr(e, 'status_code', '?')}"]
+            raise
+    record["attempts"] = attempts
+    raise last
 
 
 def mock_call(paper_id, text, run):
@@ -175,6 +208,12 @@ def main():
             sys.exit(f"paper_ids not in corpus: {sorted(missing)}")
 
     model_keys = list(cfg["models"]) if args.models == "all" else args.models.split(",")
+    envf = ROOT / ".env"
+    if envf.exists():
+        for line in envf.read_text().splitlines():
+            if "=" in line and not line.lstrip().startswith("#"):
+                k, v = line.split("=", 1)
+                os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
     if not args.mock and not os.environ.get(cfg["api_key_env"]):
         sys.exit(f"Set {cfg['api_key_env']} first (or use --mock).")
 
@@ -186,7 +225,13 @@ def main():
 
     for paper in papers:
         pid = paper["paper_id"]
+        fp = (paper.get("file_path") or "").strip()
+        if not fp or not Path(fp).expanduser().exists():
+            print(f"{pid:12} SKIPPED: no file at file_path '{fp}'")
+            continue
         text = load_text(paper, text_dir)
+        if len(text.strip()) < 500:
+            print(f"{pid:12} WARNING: only {len(text.strip())} characters extracted; scanned PDF?")
         prompt = prompt_tpl.replace("{paper_id}", pid).replace("{text}", text)
         approx_tokens = len(text) // 4
         for mkey in model_keys:
@@ -209,7 +254,10 @@ def main():
                     "mock": args.mock,
                 }
                 try:
-                    res = mock_call(pid, text, run) if args.mock else call_model(cfg, mcfg, prompt)
+                    if args.mock:
+                        res = mock_call(pid, text, run)
+                    else:
+                        res = call_with_retry(cfg, mcfg, prompt, record)
                     parsed = parse_json(res["raw"])
                     status, errs = classify(res["raw"], parsed)
                     if res.get("finish_reason") == "length":

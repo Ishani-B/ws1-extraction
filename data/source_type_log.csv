@@ -1,0 +1,156 @@
+paper_id,source_type,source_type_rule,record_type,venue,title
+R0028,peer-reviewed,journal or conference venue,Journal article,Frontiers in bioengineering and biotechnology,"A national framework for managing dual-use research of concern: integrating biosecurity, public health, and research governance."
+R0062,preprint,preprint server venue or preprint type,Journal article,bioRxiv : the preprint server for biology,vir2vec: A Viral Genome-Wide Viral Embedding.
+R0063,peer-reviewed,journal or conference venue,Journal article,Frontiers in microbiology,Dual-use artificial intelligence and biology: upstream risk-benefit reviews.
+R0069,preprint,preprint server venue or preprint type,Journal article,bioRxiv : the preprint server for biology,Safeguarding open-weight genomic foundation models through weight locking.
+R0070,peer-reviewed,journal or conference venue,Journal article,PLoS computational biology,Dual-use capabilities of concern of biological AI models.
+R0093,peer-reviewed,journal or conference venue,Journal article,Journal of evaluation in clinical practice,Artificial General Intelligence and Its Threat to Public Health.
+R0098,peer-reviewed,journal or conference venue,Journal article,Frontiers in bioengineering and biotechnology,Cyber-biological convergence: a systematic review and future outlook.
+R0118,peer-reviewed,journal or conference venue,Journal article,Frontiers in bioengineering and biotechnology,Strengthening global biosecurity for synthetic nucleic acid technology: from sequence screening to risk-based governance in the AI era.
+R0133,peer-reviewed,journal or conference venue,Journal article,British journal of clinical pharmacology,Artificial intelligence in clinical pharmacology: A case study and scoping review of large language models and bioweapon potential.
+R0136,peer-reviewed,journal or conference venue,Journal article,Frontiers in microbiology,From capability uplift to capability governance: an AI-biosecurity stack.
+R0141,peer-reviewed,journal or conference venue,Journal article,"Pharmaceuticals (Basel, Switzerland)",Harnessing Machine Learning for Accelerated Drug Discovery: Opportunities and Unmet Challenges.
+R0143,peer-reviewed,journal or conference venue,Journal article,Frontiers in microbiology,Toward relational biosecurity: understanding AI-enabled biology as a connected system.
+R0159,peer-reviewed,journal or conference venue,Journal article,Frontiers in public health,"From pandemics to preparedness: harnessing AI, CRISPR, and synthetic biology to counter biosecurity threats."
+R0162,peer-reviewed,journal or conference venue,Journal article,Applied biosafety : journal of the American Biological Safety Association,Virologist Opinions: An Important Component for the Governance of the Convergence of Artificial Intelligence and Dual-Use Research of Concern.
+R0163,peer-reviewed,journal or conference venue,Journal article,Applied biosafety : journal of the American Biological Safety Association,Practical Questions for Securing Nucleic Acid Synthesis.
+R0171,peer-reviewed,journal or conference venue,Journal article,Frontiers in bioengineering and biotechnology,The whack-a-mole governance challenge for AI-enabled synthetic biology: literature review and emerging frameworks.
+R0172,peer-reviewed,journal or conference venue,Journal article,Clinical microbiology and infection : the official publication of the European Society of Clinical Microbiology and Infectious Diseases,"Practical applications of artificial intelligence in infectious disease surveillance and control: opportunities, challenges, and ethical considerations."
+R0174,peer-reviewed,journal or conference venue,Journal article,Frontiers in public health,Global health preparedness for biosecurity threats: a review of emerging technologies and solutions.
+R0178,peer-reviewed,journal or conference venue,Journal article,Viruses,CRISPR Treatments for AI-Designed Synthetic Viruses: Rapid Programmable Countermeasures for Emerging and Engineered Viruses.
+R0187,peer-reviewed,journal or conference venue,Journal article,Frontiers in medicine,Safely balancing a double-edged blade: identifying and mitigating emerging biosecurity risks in precision medicine.
+R0197,peer-reviewed,journal or conference venue,Journal article,Biotechnology advances,The path to biotechnological singularity: Current breakthroughs and outlook.
+R0222,peer-reviewed,journal or conference venue,Journal article,Frontiers in bioengineering and biotechnology,ADAPT: a programme for the advanced detection of AI-enabled pathogenic threats.
+R0224,peer-reviewed,journal or conference venue,Journal article,Frontiers in bioengineering and biotechnology,"Improving governance in the age of synthetic biology, artificial intelligence, and diverging threats."
+R0234,peer-reviewed,journal or conference venue,Journal article,Health security,Assessing the Risks Posed by the Convergence of Artificial Intelligence and Biotechnology.
+R0248,peer-reviewed,journal or conference venue,Journal article,Biotechnology and bioengineering,Prioritizing Feasible and Impactful Actions to Enable Secure AI Development and Use in Biology.
+R0249,peer-reviewed,journal or conference venue,Journal article,Health security,AIxBio: Opportunities to Strengthen Health Security.
+R0250,peer-reviewed,journal or conference venue,Journal article,The International journal on drug policy,Exploring dual-use risks of large language models for new psychoactive substances: a severity-based vulnerability analysis.
+R0254,peer-reviewed,journal or conference venue,Journal article,Global public health,The case for near-term artificial intelligence risks to be considered a public health problem.
+R0278,peer-reviewed,journal or conference venue,Journal article,Human genetics,Regulating genome language models: navigating policy challenges at the intersection of AI and genetics.
+R0286,peer-reviewed,journal or conference venue,Journal article,Genes,"The Evolving Role of Artificial Intelligence in Medical Genetics: Advancing Healthcare, Research, and Biosafety Management."
+R0311,peer-reviewed,journal or conference venue,Journal article,Applied biosafety : journal of the American Biological Safety Association,Safeguarding Mail-Order DNA Synthesis in the Age of Artificial Intelligence.
+R0314,peer-reviewed,journal or conference venue,Journal article,Frontiers in microbiology,"Protein design, generative AI and biological security."
+R0332,peer-reviewed,journal or conference venue,Journal article,Nature machine intelligence,Toward a framework for risk mitigation of potential misuse of artificial intelligence in biomedical research.
+R0339,institutional report,think tank / institutional venue or report type,Journal article,Rand health quarterly,Automated Grading for Efficiently Evaluating the Dual-Use Biological Capabilities of Large Language Models.
+R0343,peer-reviewed,journal or conference venue,Journal article,Frontiers in microbiology,"Without safeguards, AI-Biology integration risks accelerating future pandemics."
+R0346,peer-reviewed,journal or conference venue,Journal article,Frontiers in bioengineering and biotechnology,The limits of sequence-based biosecurity screening tools in the age of AI-assisted protein design.
+R0347,peer-reviewed,journal or conference venue,Journal article,Frontiers in bioengineering and biotechnology,Closing the implementation gap: a harmonised EU framework for synthetic nucleic acid screening and customer verification.
+R0352,peer-reviewed,journal or conference venue,Journal article,"Science (New York, N.Y.)",Strengthening nucleic acid biosecurity screening against generative protein design tools.
+R0354,peer-reviewed,journal or conference venue,Journal article,Journal of law and medicine,"Virtual Labs and Designer Bugs - Generative AI, Synthetic Biology and National Security."
+R0358,peer-reviewed,journal or conference venue,Journal article,Trends in genetics : TIG,A safety-centric perspective on innovation and risk in the use of artificial intelligence in genomics.
+R0362,peer-reviewed,journal or conference venue,Journal article,Synthetic and systems biotechnology,Advances in detecting category A biothreat agents: Toward symptom-driven sensing strategies.
+R0366,peer-reviewed,journal or conference venue,Journal article,Frontiers in artificial intelligence,Artificial intelligence challenges in the face of biological threats: emerging catastrophic risks for public health.
+R0368,peer-reviewed,journal or conference venue,Journal article,Risk analysis : an official publication of the Society for Risk Analysis,Toward risk analysis of the impact of artificial intelligence on the deliberate biological threat landscape.
+R0373,peer-reviewed,journal or conference venue,Journal article,Frontiers in bioengineering and biotechnology,"Responsible AI in biotechnology: balancing discovery, innovation and biosecurity risks."
+R0374,peer-reviewed,journal or conference venue,Journal article,Trends in biotechnology,Governance strategies for biological AI: beyond the dual-use dilemma.
+R0375,peer-reviewed,journal or conference venue,Journal article,EMBO reports,The time window before biological AI spreads : To prevent the misuse of biological AI models with dual-use capabilities requires governance of the embargo window.
+R0376,peer-reviewed,journal or conference venue,Journal article,EMBO reports,Security challenges by AI-assisted protein design : The ability to design proteins in silico could pose a new threat for biosecurity and biosafety.
+R0377,peer-reviewed,journal or conference venue,Journal article,"Science (New York, N.Y.)",Could chatbots help devise the next pandemic virus?
+R0378,peer-reviewed,journal or conference venue,Journal article,"Public health reports (Washington, D.C. : 1974)",From the Anthrax Attacks to Threats Posed by Generative Artificial Intelligence: The Changing Nature of Biosecurity in the 21st Century.
+R0379,peer-reviewed,journal or conference venue,Journal article,BMJ (Clinical research ed.),AI bioweapons: Anthropic claims scientists used Claude AI tool for dangerous research.
+R0380,peer-reviewed,journal or conference venue,Journal article,Frontiers in microbiology,Editorial: Artificial Intelligence and the Future of Biosecurity.
+R0381,peer-reviewed,journal or conference venue,Journal article,Nature,"AI can design viruses, toxins and other bioweapons. How worried should we be?"
+R0383,peer-reviewed,journal or conference venue,Journal article,Nature biotechnology,A call for built-in biosecurity safeguards for generative AI tools.
+R0385,peer-reviewed,journal or conference venue,Journal article,Nature,AI could pose pandemic-scale biosecurity risks. Here's how to make it safer.
+R0387,peer-reviewed,journal or conference venue,Journal article,British journal of clinical pharmacology,"Letter to the editor concerning the article: ""Artificial intelligence in clinical pharmacology: A case study and scoping review of large language models and bioweapon potential""."
+R0388,peer-reviewed,journal or conference venue,Journal article,The American journal of bioethics : AJOB,Large Language Models and Biorisk.
+R0399,peer-reviewed,journal or conference venue,Journal article,"Ethics, Medicine and Public Health","Redefining biological weapons in the evolving AI, CRISPR, and biothreat landscape"
+R0440,institutional report,think tank / institutional venue or report type,Book Chapter,NATO Science for Peace and Security Series A: Chemistry and Biology,A Brief Introduction to the Convergence of Artificial Intelligence and Biotechnology
+R0461,book chapter,"book, chapter, reference entry or 'other' record type",Book,Advanced Sciences and Technologies for Security Applications,Hybrid Warfare 2.2: Where Biothreats Meet Irregular Operations and Cyber Warriors in the 21st Century
+R0507,peer-reviewed,journal or conference venue,Journal article,Pharma Times,"EMERGING AND FUTURE TECHNOLOGIES IN PHARMACEUTICALS: GENERATIVE AI, DIGITAL THERAPEUTICS AND AI–BIOCONVERGENCE"
+R0591,peer-reviewed,journal or conference venue,Conference paper,"Proceedings - 47th IEEE Symposium on Security and Privacy Workshops, SPW 2026",Adversarial Genomic Sequences Could Evade Biosecurity Screening
+R0601,peer-reviewed,journal or conference venue,Journal article,AI (Switzerland),"Viruses, Vectors, and Villains: Governing the Risks and Rewards of Artificial Intelligence in Virology"
+R0606,peer-reviewed,journal or conference venue,Journal article,Global Biosecurity,"Artificial Intelligence Enabled Viral Weapons of Mass Destruction, A Critical Perspective on The Current Landscape of Nucleic Screening, AI Agents, and Implementing the National Artificial Intelligence Action Plan"
+R0607,peer-reviewed,journal or conference venue,Journal article,AJO International,"Artificial intelligence, adversarial attacks, and ocular warfare"
+R0657,peer-reviewed,journal or conference venue,Journal article,Eurobiotech Journal,"AI-Powered Synthetic Biology: Current Situation, Challenges, and Future Perspectives"
+R0663,book chapter,"book, chapter, reference entry or 'other' record type",Book Chapter,Extremophiles for a Sustainable Future,The Future of AI and Biotechnology
+R0673,book chapter,"book, chapter, reference entry or 'other' record type",Book Chapter,Cyberbiosecurity: A New Field to Deal with Emerging Threats,How to Protect Biotechnology and Biosecurity from Adversarial AI Attacks? A Global Governance Perspective
+R0711,peer-reviewed,journal or conference venue,Journal article,AI and Society,Protecting society from AI misuse: when are restrictions on capabilities warranted?
+R0720,peer-reviewed,journal or conference venue,Conference paper,"2025 IEEE 15th Annual Computing and Communication Workshop and Conference, CCWC 2025",Malicious Use of Artificial Intelligence
+R0726,peer-reviewed,journal or conference venue,Journal article,Nonproliferation Review,Hazard or hysteria? The proliferation risk of combining artificial intelligence and additive manufacturing in the development of chemical and biological weapons
+R0728,peer-reviewed,journal or conference venue,Journal article,Biological Invasions,The double-edged sword of artificial intelligence in invasion biology
+R0750,peer-reviewed,journal or conference venue,Conference paper,Proceedings of Machine Learning Research,Adversaries Can Misuse Combinations of Safe Models
+R0789,peer-reviewed,journal or conference venue,Journal article,Research Ethics,Dual use concerns in artificial intelligence and the neurosciences: How medical research can end up in war
+R0810,book chapter,"book, chapter, reference entry or 'other' record type",Book Chapter,Artificial Intelligence in Biotechnology: Biomanufacturing and Precision Medicine,Emerging Technologies at the Intersection of AI and Biotechnology
+R0818,peer-reviewed,journal or conference venue,Journal article,AI and Society,Synthetic biology/AI convergence (SynBioAI): security threats in frontier science and regulatory challenges
+R0837,peer-reviewed,journal or conference venue,Conference paper,"Proceedings - 47th IEEE Symposium on Security and Privacy Workshops, SPW 2026","Targeting Systems, Not Pathogens: Adapting Cybersecurity Threat Modeling for Modern Biosecurity"
+R0852,book chapter,"book, chapter, reference entry or 'other' record type",Book Chapter,Cyberbiosecurity: A New Field to Deal with Emerging Threats,Artificial Intelligence and the Weaponization of Genetic Data
+R0872,book chapter,"book, chapter, reference entry or 'other' record type",Book Chapter,Essentials of Biological Security: A Global Perspective,Where is the governance of dual-use science going?
+R0885,peer-reviewed,journal or conference venue,Conference paper,"ACMF AccT 2025 - Proceedings of the 2025 ACM Conference on Fairness, Accountability,and Transparency",The Reality of AI and Biorisk
+R0886,peer-reviewed,journal or conference venue,Journal article,Science,Biological data governance in an age of AI
+R0929,peer-reviewed,journal or conference venue,Journal article,Bulletin of the Atomic Scientists,How to protect the world from ultra-targeted biological weapons
+R0954,book chapter,"book, chapter, reference entry or 'other' record type",Book Chapter,"Handbook of Emergency Response: A Human Factors and Systems Engineering Approach, Second Edition",Current Threats to Biosecurity
+R0971,peer-reviewed,journal or conference venue,Conference paper,"Proceedings - 47th IEEE Symposium on Security and Privacy Workshops, SPW 2026",Limitations of Biological Risk Evaluation for Llms and Autonomous Science
+R0998,book chapter,"book, chapter, reference entry or 'other' record type",Book Chapter,The Routledge Handbook of Artificial Intelligence and International Relations,Chemical and biological weapons in the age of generative artificial intelligence
+R1105,peer-reviewed,journal or conference venue,article,Frontiers in Bioengineering and Biotechnology,Grand challenge in biosafety and biosecurity
+R1154,peer-reviewed,journal or conference venue,editorial,Frontiers in Bioengineering and Biotechnology,"Editorial: Insights in biosafety and biosecurity 2024/2025: novel developments, current challenges, and future perspectives"
+R1181,government,known government publication (title),report,,Managing Misuse Risk for Dual-Use Foundation Models
+R1315,peer-reviewed,journal or conference venue,article,Pneumon,Risks of Artificial Intelligence (AI) in Medicine
+R1416,government,known government publication (title),report,,How the UK Government should address the misuse risk from AI-enabled biological tools
+R1492,book chapter,"book, chapter, reference entry or 'other' record type",reference-entry,,"Dual-Use Risk Governance for AI-Enabled Bioinformatics: Access Control, Publication Norms, and Responsible Capability Release"
+R1521,preprint,preprint server venue or preprint type,article,Zenodo (CERN European Organization for Nuclear Research),The Bond-Sign Boundary: A Mathematical Framework for Distinguishing Therapeutic from Ethically Problematic Genomic Interventions in the Age of AI-Driven Genome Design
+R1525,peer-reviewed,journal or conference venue,article,International Journal of Innovative Technology and Exploring Engineering,Responsible Disclosure in the Age of Generative AI: A Normative Model for Dual-Use Risk
+R1558,preprint,preprint server venue or preprint type,preprint,arXiv (Cornell University),An Early Warning of Emerging Biosecurity Risks in Frontier LLMs
+R1566,peer-reviewed,journal or conference venue,article,AI and Ethics,"Artificial intelligence and synthetic biology: biosecurity risks, dual-use concerns, and governance pathways"
+R1580,peer-reviewed,journal or conference venue,article,Saudi Journal of Medicine and Public Health,The Dual-Edged Sword: Generative AI Health Assistants and the Proliferation of Cyber-Biological Threats
+R1597,peer-reviewed,journal or conference venue,article,Genomics Communications,From foundation models to autonomous agents in biology
+R1638,preprint,preprint server venue or preprint type,preprint,arXiv (Cornell University),"Artificial intelligence and biosecurity: capabilities, threat pathways, and defense-in-depth governance"
+R1641,peer-reviewed,journal or conference venue,article,Journal of Science Policy & Governance,Qualify AI Drug Discovery Tools through FDA ISTAND Program to Model Responsible Drug Discovery AI and Mitigate Dual Use Concerns
+R1651,preprint,preprint server venue or preprint type,preprint,SSRN Electronic Journal,AI Biosecurity Benchmarks and Real-World Risk
+R1698,preprint,preprint server venue or preprint type,preprint,arXiv (Cornell University),The Biosecurity Blind Spot: Systematic Dual-use Detection in Open Science Infrastructure
+R1712,peer-reviewed,journal or conference venue,article,GEN Biotechnology,Biosecurity and Artificial Intelligence in the Life Sciences
+R1726,preprint,preprint server venue or preprint type,preprint,arXiv (Cornell University),Generative AI for Biosciences: Emerging Threats and Roadmap to Biosecurity
+R1748,preprint,preprint server venue or preprint type,article,Zenodo (CERN European Organization for Nuclear Research),Dual Use in AI-Driven Biotechnology: How Should We Govern It?
+R1754,preprint,preprint server venue or preprint type,preprint,arXiv (Cornell University),BioVeil MATRIX: Uncovering and categorizing vulnerabilities of agentic biological AI scientists
+R1757,preprint,preprint server venue or preprint type,preprint,arXiv (Cornell University),Artificial intelligence and biological misuse: Differentiating risks of language models and biological design tools
+R1758,peer-reviewed,journal or conference venue,article,SCIENCE International Journal,ARTIFICIAL INTELLIGENCE IMPACT ASSESSMENT ON NATIONAL SECURITY STRATEGY DEVELOPMENT
+R1760,preprint,preprint server venue or preprint type,preprint,Preprints.org,Dangerous Knowledge and Medical AI: Why Technical Containment Is Necessary but Insufficient for Managing Dual-Use Risk
+R1789,preprint,preprint server venue or preprint type,preprint,arXiv (Cornell University),A Blind Spot in Alignment: Quantifying Biosecurity Risks in Large Language Models
+R1792,preprint,preprint server venue or preprint type,preprint,arXiv (Cornell University),Can large language models democratize access to dual-use biotechnology?
+R1799,preprint,preprint server venue or preprint type,preprint,arXiv (Cornell University),Measuring Biological Capabilities and Risks of AI Agents
+R1804,preprint,preprint server venue or preprint type,preprint,arXiv (Cornell University),Model Capability Assessment and Safeguards for Biological Weaponization
+R1841,preprint,preprint server venue or preprint type,preprint,arXiv (Cornell University),ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity
+R1846,preprint,preprint server venue or preprint type,preprint,arXiv (Cornell University),The Promise and Peril of Artificial Intelligence -- Violet Teaming Offers a Balanced Path Forward
+R1855,preprint,preprint server venue or preprint type,preprint,arXiv (Cornell University),Resilient Biosecurity in the Era of AI-Enabled Bioweapons
+R1887,institutional report,think tank / institutional venue or report type,report,,Understanding AI-Facilitated Biological Weapon Development
+R1926,preprint,preprint server venue or preprint type,preprint,arXiv (Cornell University),The Convergence of AI and Synthetic Biology: The Looming Deluge
+R1959,preprint,preprint server venue or preprint type,preprint,Zenodo (CERN European Organization for Nuclear Research),Violet Teaming AI in the Life Sciences
+R1976,preprint,preprint server venue or preprint type,preprint,bioRxiv (Cold Spring Harbor Laboratory),Experimental evaluation of AI-driven protein design risks using safe biological proxies
+R1978,book chapter,"book, chapter, reference entry or 'other' record type",book-chapter,,The Role of Artificial Intelligence (AI) in Synthetic Biology and Biosecurity Implications
+R1989,preprint,preprint server venue or preprint type,book,Zenodo (CERN European Organization for Nuclear Research),The Biosecurity Handbook: A Practical Guide to Biological Security and AI-Biosecurity Convergence
+R2007,preprint,preprint server venue or preprint type,dataset,Zenodo (CERN European Organization for Nuclear Research),"ARTIFICIAL INTELLIGENCE, SYNTHETIC BIOLOGY AND DUAL-USE TECHNOLOGIES: NEW LEGAL CHALLENGES FOR THE CHEMICAL AND BIOLOGICAL DISARMAMENT REGIME"
+R2009,institutional report,think tank / institutional venue or report type,preprint,,"Responsible Biodesign Workshop: AI, Protein Design, and the Biosecurity Landscape – Recommended Actions"
+R2012,peer-reviewed,journal or conference venue,article,Journal of Medical Ethics,"Artificial intelligence, pharmaceutical development and dual-use research of concern: a call to action"
+R2027,institutional report,think tank / institutional venue or report type,book,Repository KITopen (Karlsruhe Institute of Technology),Biotechnology and artificial intelligence: Risks posed by research to security and biological weapons proliferation. TAB-Fokus
+R2028,red-team study,title mentions red-team,book,RAND Corporation eBooks,The Operational Risks of AI in Large-Scale Biological Attacks: Results of a Red-Team Study
+R2032,institutional report,think tank / institutional venue or report type,book,RAND Corporation eBooks,"On the Responsible Development and Use of Chem-Bio AI Models: Comments on Evaluations, Mitigations, and Emerging Trends"
+R2036,institutional report,think tank / institutional venue or report type,book,RAND Corporation eBooks,Restricting AI Agent Use of Biological Tools: Exploring the Feasibility of Software Barriers
+R2038,institutional report,think tank / institutional venue or report type,book,RAND Corporation eBooks,"AI Implications for Chemical, Biological, Radiological, and Nuclear Defense Policy and Programs: A Strategic Analytic Research Agenda"
+R2040,institutional report,think tank / institutional venue or report type,book,RAND Corporation eBooks,"Open-Weight AI Models May Increase Biological Misuse Risks: Assessing Anti-Refusal Tampering, Capability Enhancement, and Publicly Available Uncensored Models"
+R2041,institutional report,think tank / institutional venue or report type,book,RAND Corporation eBooks,Developing a Risk-Scoring Tool for Artificial Intelligence–Enabled Biological Design: A Method to Assess the Risks of Using Artificial Intelligence to Modify Select Viral Capabilities
+R2042,institutional report,think tank / institutional venue or report type,book,RAND Corporation eBooks,Contemporary Foundation AI Models Increase Biological Weapons Risk
+R2046,red-team study,title mentions red-team,book,RAND Corporation eBooks,The Operational Risks of AI in Large-Scale Biological Attacks: A Red-Team Approach
+R2048,institutional report,think tank / institutional venue or report type,other,,AI-Enabled Biological Design and the Risks of Synthetic Biology
+R2051,institutional report,think tank / institutional venue or report type,book,RAND Corporation eBooks,Mitigating Risks at the Intersection of Artificial Intelligence and Chemical and Biological Weapons
+R2062,book chapter,"book, chapter, reference entry or 'other' record type",other,,Prompt injection defenses open a biosecurity gap
+R2069,institutional report,think tank / institutional venue or report type,book-chapter,Studies in peace and security,AI and Biological Weapons
+R2086,preprint,preprint server venue or preprint type,preprint,SSRN Electronic Journal,Managing GenAI Biosecurity Risks: A Comprehensive Approach to Ethical Management of Biosecurity Risks Related to the Use of Generative Artificial Intelligence
+R2113,preprint,preprint server venue or preprint type,preprint,SSRN Electronic Journal,"How Can AI-Driven Models Trained on Open-Access Genetic and Bioinformatics Data be Leveraged to Detect Dual-Use CRISPR-Cas9 Applications with Bioterrorism Potential, and what are the Implications for Developing a Real-Time International Reporting System to Enhance Global Biosecurity?"
+R2218,preprint,preprint server venue or preprint type,Preprint,arXiv,A Biosecurity Agent for Lifecycle LLM Biosecurity Alignment
+R2222,preprint,preprint server venue or preprint type,Preprint,arXiv,Intolerable Risk Threshold Recommendations for Artificial Intelligence
+R2228,preprint,preprint server venue or preprint type,Preprint,arXiv,Can Large Language Models Design Biological Weapons? Evaluating Moremi Bio
+R2324,peer-reviewed,journal or conference venue,JOUR,Pakistan Research Journal of Social Sciences,Risks of Bioterrorism Escalating Due to Artificial Intelligence
+R2325,peer-reviewed,journal or conference venue,JOUR,Journal of Political Strategy,"The Evolution of Bioterrorism Threats in the Era of Generative Artificial Intelligence, with an Emphasis on the Strategic Requirements of Biosecurity and the Challenges of Criminal Liability"
+R2328,miscellaneous,article type but no venue in the record,JOUR,,AI and Biosecurity
+R2331,miscellaneous,article type but no venue in the record,JOUR,,Building Resilience Against Artificial Intelligence-Enabled Biological Threats
+R2333,institutional report,think tank / institutional venue or report type,JOUR,Belfer Center for Science and International Affairs Report,Biosecurity in the Age of AI: What's the Risk?
+R2335,miscellaneous,article type but no venue in the record,JOUR,,Artificial Intelligence in Biological and Chemical Warfare
+R2338,miscellaneous,thesis,THES,University of Oxford,Panoptic dual-use management: preventing deliberate pandemics in an age of synthetic biology and artificial intelligence
+R2339,peer-reviewed,journal or conference venue,JOUR,RAIS J. Soc. Sci,"Artificial intelligence driven criminal and national security threats in biosecurity, biotechnology, and bio-cybersecurity"
+R2340,peer-reviewed,journal or conference venue,JOUR,Science,Alarming report on AI and bioweapons divides scientists
+R2345,miscellaneous,article type but no venue in the record,JOUR,,Interpreting Dual-Use Biology Benchmarks for Frontier AI
+R2348,miscellaneous,article type but no venue in the record,JOUR,,Deleting Biological Weapons Knowledge from Large Language Models
+R2349,peer-reviewed,journal or conference venue,CPAPER,NeurIPS 2025 Workshop on Biosecurity Safeguards for Generative AI,Is My Language Model a Biohazard?
+R2354,peer-reviewed,journal or conference venue,CPAPER,NeurIPS 2025 Workshop on Biosecurity Safeguards for Generative AI,"Position: Without Global Governance, AI-Enabled Biodesign Tools Risk Dangerous Proliferation"
+R2357,red-team study,title mentions red-team,JOUR,,Behavioral Red Teaming: Investigating Future Biosecurity Risk from Agentic AI and De Novo Sequence Design

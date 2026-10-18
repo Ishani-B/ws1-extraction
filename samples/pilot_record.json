@@ -1,0 +1,36 @@
+{
+  "seed": 20261016,
+  "eligible": 107,
+  "eligible_by_group": {
+    "peer-reviewed": 62,
+    "preprint": 27,
+    "report / government / red-team": 18
+  },
+  "pilot": [
+    {
+      "paper_id": "R0197",
+      "source_type": "peer-reviewed",
+      "title": "The path to biotechnological singularity: Current breakthroughs and outlook."
+    },
+    {
+      "paper_id": "R1760",
+      "source_type": "preprint",
+      "title": "Dangerous Knowledge and Medical AI: Why Technical Containment Is Necessary but Insufficient for Managing Dual-Use Risk"
+    },
+    {
+      "paper_id": "R2113",
+      "source_type": "preprint",
+      "title": "How Can AI-Driven Models Trained on Open-Access Genetic and Bioinformatics Data be Leveraged to Detect Dual-Use CRISPR-Cas9 Applications with Bioterrorism Potential, and what are the Implications for Developing a Real-Time International Reporting System to Enhance Global Biosecurity?"
+    },
+    {
+      "paper_id": "R2340",
+      "source_type": "peer-reviewed",
+      "title": "Alarming report on AI and bioweapons divides scientists"
+    },
+    {
+      "paper_id": "R2357",
+      "source_type": "red-team study",
+      "title": "Behavioral Red Teaming: Investigating Future Biosecurity Risk from Agentic AI and De Novo Sequence Design"
+    }
+  ]
+}

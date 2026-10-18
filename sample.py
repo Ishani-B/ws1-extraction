@@ -36,6 +36,7 @@ def main():
     ap.add_argument("--fraction", type=float, default=0.10)
     ap.add_argument("--pilot", type=int, default=5)
     ap.add_argument("--out", default="samples")
+    ap.add_argument("--exclude", help="file of paper_ids to keep out of the draw (e.g. pilot papers chosen earlier)")
     args = ap.parse_args()
 
     with open(args.corpus, newline="", encoding="utf-8") as f:
@@ -43,6 +44,16 @@ def main():
     ids = [r["paper_id"] for r in rows]
     if len(ids) != len(set(ids)):
         raise SystemExit("duplicate paper_ids in corpus")
+    excluded = set()
+    if args.exclude:
+        excluded = {l.strip() for l in Path(args.exclude).read_text().splitlines() if l.strip()}
+        rows = [r for r in rows if r["paper_id"] not in excluded]
+        print(f"Excluding {len(excluded)} papers listed in {args.exclude}")
+
+    unlabeled = [r["paper_id"] for r in rows if r["source_type"].strip() in ("", "needs_check")]
+    if unlabeled:
+        raise SystemExit(f"{len(unlabeled)} papers have no source_type yet (e.g. {unlabeled[:5]}). "
+                         "Label them before drawing, or the strata will be wrong.")
 
     strata = defaultdict(list)
     for r in rows:
@@ -50,7 +61,8 @@ def main():
     for k in strata:
         strata[k].sort()  # draw depends only on the ids, not the CSV row order
 
-    n_val = round(len(rows) * args.fraction)
+    # 10% of the full corpus, including any excluded papers
+    n_val = round((len(rows) + len(excluded)) * args.fraction)
     alloc = allocate({k: len(v) for k, v in strata.items()}, n_val)
 
     rng = random.Random(args.seed)
@@ -71,9 +83,11 @@ def main():
     out = Path(args.out)
     out.mkdir(exist_ok=True)
     (out / "validation_ids.txt").write_text("\n".join(sorted(val_ids)) + "\n")
-    (out / "pilot_ids.txt").write_text("\n".join(pilot) + "\n")
+    if args.pilot > 0:  # never overwrite a pilot list chosen earlier (pick_pilot.py)
+        (out / "pilot_ids.txt").write_text("\n".join(pilot) + "\n")
     record = {
-        "seed": args.seed, "corpus_size": len(rows), "fraction": args.fraction,
+        "seed": args.seed, "corpus_size": len(rows) + len(excluded), "excluded": sorted(excluded),
+        "fraction": args.fraction,
         "validation_size": n_val,
         "strata": {k: {"in_corpus": len(strata[k]),
                        "exact_share": round(n_val * len(strata[k]) / len(rows), 3),
@@ -85,7 +99,7 @@ def main():
     print(f"Validation sample: {n_val} of {len(rows)} papers (seed {args.seed})")
     for k in sorted(strata):
         print(f"  {k:30} {len(strata[k]):4} in corpus  ->  {alloc[k]} sampled")
-    print(f"Pilot (outside validation sample): {', '.join(pilot)}")
+    print(f"Pilot (outside validation sample): {', '.join(pilot) if pilot else 'not drawn here'}")
     print(f"Wrote {out}/validation_ids.txt, pilot_ids.txt, sampling_record.json")
 
 

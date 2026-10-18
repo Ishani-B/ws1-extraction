@@ -1,7 +1,16 @@
 .venv/
 __pycache__/
 .env
+.DS_Store
 
-# pipeline output: runs/text holds full paper text, so keep it out of the repo
+# pipeline output: runs/text holds full paper text, raw outputs and the
+# blinding key must not be visible to reviewers, so keep it out of the repo
 runs*/
 samples_mock/
+
+# paper PDFs: copyrighted and large
+pdfs/
+
+# local backups
+data/corpus.before_*.csv
+data/conflicts.before_*.csv

@@ -1,0 +1,93 @@
+{
+  "seed": 20261017,
+  "corpus_size": 143,
+  "excluded": [
+    "R0197",
+    "R0354",
+    "R0379",
+    "R0399",
+    "R0507",
+    "R0810",
+    "R0872",
+    "R0998",
+    "R1492",
+    "R1566",
+    "R1712",
+    "R1758",
+    "R1760",
+    "R2009",
+    "R2012",
+    "R2069",
+    "R2113",
+    "R2325",
+    "R2328",
+    "R2335",
+    "R2340",
+    "R2357"
+  ],
+  "fraction": 0.1,
+  "validation_size": 14,
+  "strata": {
+    "book chapter": {
+      "in_corpus": 7,
+      "exact_share": 0.81,
+      "sampled": 1,
+      "ids": [
+        "R0673"
+      ]
+    },
+    "government": {
+      "in_corpus": 2,
+      "exact_share": 0.231,
+      "sampled": 0,
+      "ids": []
+    },
+    "institutional report": {
+      "in_corpus": 13,
+      "exact_share": 1.504,
+      "sampled": 2,
+      "ids": [
+        "R0339",
+        "R2040"
+      ]
+    },
+    "miscellaneous": {
+      "in_corpus": 3,
+      "exact_share": 0.347,
+      "sampled": 0,
+      "ids": []
+    },
+    "peer-reviewed": {
+      "in_corpus": 68,
+      "exact_share": 7.868,
+      "sampled": 8,
+      "ids": [
+        "R0278",
+        "R0347",
+        "R0352",
+        "R0375",
+        "R0377",
+        "R0606",
+        "R1315",
+        "R1597"
+      ]
+    },
+    "preprint": {
+      "in_corpus": 26,
+      "exact_share": 3.008,
+      "sampled": 3,
+      "ids": [
+        "R1799",
+        "R1926",
+        "R1959"
+      ]
+    },
+    "red-team study": {
+      "in_corpus": 2,
+      "exact_share": 0.231,
+      "sampled": 0,
+      "ids": []
+    }
+  },
+  "pilot_ids": []
+}
